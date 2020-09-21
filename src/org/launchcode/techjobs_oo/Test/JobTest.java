@@ -1,12 +1,14 @@
 package org.launchcode.techjobs_oo.Test;
 
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.launchcode.techjobs_oo.*;
 
 import static org.junit.Assert.*;
 
 public class JobTest {
+
     Job testJob;
     Job testJob2;
     Job testJob3;
