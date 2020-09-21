@@ -88,4 +88,24 @@ public class Job {
     public int getId() {
         return id;
     }
+    public String checkEmpty(String word) {
+        if (word.isEmpty()) {
+            word = "Data not available";
+        }
+        return word;
+    }
+        public String toString(){
+        String nameToString = this.getName();
+        String employerToString = this.getEmployer().toString();
+        String locationToString = this.getLocation().toString();
+        String positionTypeToString = this.getPositionType().toString();
+        String coreCompetencyToString = this.getCoreCompetency().toString();
+
+        return "\nID: "+this.getId()+
+                "\nName: "+checkEmpty(nameToString)+
+                "\nEmployer: "+checkEmpty(employerToString)+
+                "\nLocation: "+checkEmpty(locationToString)+
+                "\nPosition Type: "+checkEmpty(positionTypeToString)+
+                "\nCore Competency: "+checkEmpty(coreCompetencyToString)+ "\n";
+    }
 }
