@@ -9,15 +9,18 @@ import static org.junit.Assert.*;
 
 public class JobTest {
 
-    Job testJob;
-    Job testJob2;
+    static Job testJob;
+    static Job testJob2;
     Job testJob3;
     Job testJob4;
 
-    @Before
-    public void createJobObject(){
+    @BeforeClass
+    public static void createFirstJobObjects(){
         testJob = new Job();
         testJob2 = new Job();
+    }
+    @Before
+    public void createJobObject(){
         testJob3 = new Job("Product tester", new Employer("ACME"),
                 new Location("Desert"), new PositionType("Quality control"),
                 new CoreCompetency("Persistence"));
@@ -26,12 +29,12 @@ public class JobTest {
                 new CoreCompetency("Persistence"));
     }
 
-//    @Test
-//    public void testSettingJobId(){
-//
-//        assertEquals(1,testJob.getId());
-//        assertEquals(2,testJob2.getId());
-//    }
+    @Test
+    public void testSettingJobId(){
+
+        assertEquals(1,testJob.getId());
+        assertEquals(2,testJob2.getId());
+    }
     @Test
     public void  testJobConstructorSetsAllFields(){
        assertEquals("Product tester",testJob3.getName());
